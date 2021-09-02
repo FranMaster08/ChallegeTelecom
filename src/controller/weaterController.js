@@ -9,7 +9,7 @@ const dailyWeaterServices = require("../service/weater/dailyForecast");
 const location = async (req, res, next) => {
   try {
     const data = await ipservices.getLocation();
-    res.status(200).json({ mensaje: "ubicacion", data: data });
+    res.status(200).json({ data: data });
   } catch (error) {
     throw error;
   }
