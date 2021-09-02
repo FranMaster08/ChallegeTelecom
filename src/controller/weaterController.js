@@ -27,7 +27,7 @@ const current = async (req, res, next) => {
     }
     res.status(result.cod).json(result);
   } catch (error) {
-    res.json(error);
+     res.status(error.response.status).json(error.message);
   }
 };
 
@@ -44,9 +44,9 @@ const forecast = async (req, res, next) => {
         location.lon
       );
     }
-    res.status(200).json(result);
+    res.status(result.cod).json(result);
   } catch (error) {
-    res.json(error);
+    res.status(error.response.status).json(error.message);
   }
 };
 

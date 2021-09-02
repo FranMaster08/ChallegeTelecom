@@ -3,19 +3,18 @@ const axios = require("axios");
 const getweatherByCoords = async (lat, lon) => {
   try {
     let cityCurrent = `&lat=${lat}&lon=${lon}&cnt=5`;
-    return sendRequest(cityCurrent);
+    return  sendRequest(cityCurrent);
   } catch (error) {
-    return error.response.data;
+    throw error.response.data;
   }
 };
-
 
 const getweatherByCity = async (city) => {
   try {
     let cityCurrent = city ? `&q=${city}&cnt=5` : "";
-    return sendRequest(cityCurrent);
+    return  sendRequest(cityCurrent);
   } catch (error) {
-    return error.response.data;
+    throw error.response.data;
   }
 };
 

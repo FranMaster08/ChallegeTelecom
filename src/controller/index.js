@@ -1,3 +1,3 @@
-const weater = require('./weaterController')
+const weather = require('./weaterController')
 
-module.exports = { weater }
+module.exports = { weather }

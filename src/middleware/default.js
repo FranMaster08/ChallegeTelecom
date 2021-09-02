@@ -12,7 +12,6 @@ const shouldCompress = (req) =>
 const applyMidleware = (app) => {
   // Compression.
   app.use(compression({ filter: shouldCompress, threshold: 0 }));
-
   //  app with server routes.
   app.use("/", routes);
 };
