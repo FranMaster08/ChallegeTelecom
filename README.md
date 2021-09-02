@@ -17,5 +17,5 @@ ip-api y el estado del tiempo a 5 días ]
 
 * [Express]    - El framework de NodeJs
 * [Config]     - Para manejar env
-* [node-fecth] - Para realizar peticiones
+* [Axios] - Para realizar peticiones
 

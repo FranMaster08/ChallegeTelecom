@@ -1,3 +1,15 @@
 {
-    "port": 3000
-}
+    "services": {
+      "weather": {
+        "url": "https://api.openweathermap.org/data/2.5/weather",
+        "api-key": "55fb6598ab0ac2e8ca43c4542b7b59cf"
+      },
+      "ip-api": {
+        "url": "http://ip-api.com/json"
+      }
+    },
+  
+    "port": 3000,
+    "compression": true
+  }
+  
