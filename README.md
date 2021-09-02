@@ -2,6 +2,12 @@
 Se requiere implementar una API que provea en formato JSON el estado del tiempo basado en
 diferentes endpoints.
 
+## Instructions
+
+- Instalar dependencias ``npm install``
+- Iniciar test          ``npm run test``
+- Iniciar Server        ``npm start``
+
 # Rutes 
 - Ruta base ``/v1``
 ## Endpoints
