@@ -1,8 +1,7 @@
 const request = require("supertest");
-const controller = require("../src/controller")
 var should = require("should");
 const app = require("../src/app");
-const requestMock = {query: {soledad = 'soledad'}}
+
 /*
  * Testing app
  */
@@ -13,6 +12,7 @@ describe("test routes", () => {
         .get("/v1/location")
         .expect("Content-Type", /json/)
         .end((err, response) => {
+          should.not.exist(err);
           response.status.should.be.equal(200);
           done();
         });
@@ -82,7 +82,7 @@ describe("test routes", () => {
         .get("/v1/forecast/ppppp")
         .expect("Content-Type", /json/)
         .end((err, response) => {
-            should.not.exist(err)
+          should.not.exist(err);
           response.notFound.should.be.equal(true);
           done();
         });
@@ -92,13 +92,10 @@ describe("test routes", () => {
         .get("/v1/forecast/soledad")
         .expect("Content-Type", /json/)
         .end((err, response) => {
-          should.not.exist(err)
-          response.body.should.have.property('list').with.lengthOf(5)
+          should.not.exist(err);
+          response.body.should.have.property("list").with.lengthOf(5);
           done();
         });
     });
   });
 });
-
-
-
