@@ -2,7 +2,7 @@
   "services": {
     "weather": {
       "url-current": "https://api.openweathermap.org/data/2.5/weather",
-      "url-daily": "https://api.openweathermap.org/data/2.5/onecall",
+      "url-daily": "https://api.openweathermap.org/data/2.5/forecast",
       "api-key": "55fb6598ab0ac2e8ca43c4542b7b59cf"
     },
     "ip-api": {

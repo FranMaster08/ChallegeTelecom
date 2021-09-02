@@ -2,7 +2,7 @@ const conf = require("config");
 const axios = require("axios");
 const getweatherByCoords = async (lat, lon) => {
   try {
-    let cityCurrent = `&lat=${lat}&lon=${lon}&exclude=minutely,hourly,current`;
+    let cityCurrent = `&lat=${lat}&lon=${lon}&cnt=5`;
     return sendRequest(cityCurrent);
   } catch (error) {
     return error.response.data;
@@ -18,6 +18,7 @@ const getweatherByCity = async (city) => {
     return error.response.data;
   }
 };
+
 const sendRequest = async (cityCurrent) => {
   let config = {
     method: "get",

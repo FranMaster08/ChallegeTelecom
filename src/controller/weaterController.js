@@ -43,12 +43,6 @@ const forecast = async (req, res, next) => {
         location.lat,
         location.lon
       );
-      result.daily.map(
-        (item) =>
-          (item["dt"] = new Date(1000 * item["dt"]).toLocaleDateString())
-      );
-
-      result.daily = result.daily.slice(0, 5);
     }
     res.status(200).json(result);
   } catch (error) {
