@@ -41,4 +41,4 @@ ip-api y el estado del tiempo a 5 días ]
         https://challenge-fran.herokuapp.com/v1/forecast
 
 ```
-### Buil with 💕love Francisco Javier Jimenez Cohen
+### Build with 💕love Francisco Javier Jimenez Cohen
