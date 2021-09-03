@@ -14,6 +14,7 @@ const applyMidleware = (app) => {
   app.use(compression({ filter: shouldCompress, threshold: 0 }));
   //  app with server routes.
   app.use("/", routes);
+  app.set('trust proxy', true);
 };
 
 module.exports = {

@@ -4,8 +4,11 @@ const ipservices = require("../service/ip/ipapi");
 
 const location = async (req, res, next) => {
   try {
-    const data = await ipservices.getLocation();
-    return res.status(200).json( data );
+    const ip =
+      (req.headers["x-forwarded-for"] || "").split(",")[0] ||
+      req.connection.remoteAddress.split(":").pop();
+    const data = await ipservices.getLocation(ip);
+    return res.status(200).json(data);
   } catch (error) {
     return res.status(error.response.status).json(error.message);
   }
@@ -31,7 +34,7 @@ const forecast = async (req, res, next) => {
     let result = await sendRequest(manager, city);
     return res.status(result.cod).json(result);
   } catch (error) {
-    return res.status(error.response.status).json({msg:error.message});
+    return res.status(error.response.status).json({ msg: error.message });
   }
 };
 
