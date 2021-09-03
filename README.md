@@ -8,7 +8,7 @@ diferentes endpoints.
 - Iniciar test          ``npm run test``
 - Iniciar Server        ``npm start``
 
-# Rutes 
+## Rutes 
 - Ruta base ``/v1``
 ## Endpoints
 
@@ -25,3 +25,10 @@ ip-api y el estado del tiempo a 5 días ]
 * [Config]     - Para manejar env
 * [Axios] - Para realizar peticiones
 
+
+## Auxiliar Apis
+- api.openweathermap.org  [Api meteoroligica]
+- ip-api.com              [Api geolacion]
+
+
+### Buil with love Francisco Javier Jimenez Cohen
