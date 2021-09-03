@@ -1,12 +1,11 @@
+const iputils = require('../utils/iputils');
 const { currentStrategy, forecastStrategy } = require("../model/strategies");
 const serviceWeatherManager = require("../model/serviceWeatherManager");
 const ipservices = require("../service/ip/ipapi");
 
 const location = async (req, res, next) => {
   try {
-    const ip =
-      (req.headers["x-forwarded-for"] || "").split(",")[0] ||
-      req.connection.remoteAddress.split(":").pop();
+    const ip =iputils(req)
     const data = await ipservices.getLocation(ip);
     return res.status(200).json(data);
   } catch (error) {
@@ -19,7 +18,7 @@ const current = async (req, res, next) => {
     const city = req.params.city;
     const manager = new serviceWeatherManager();
     manager.setStrategy(new currentStrategy());
-    let result = await sendRequest(manager, city);
+    let result = await sendRequest(manager, city , req);
     return res.status(result.cod).json(result);
   } catch (error) {
     return res.status(error.response.status).json(error.message);
@@ -31,17 +30,17 @@ const forecast = async (req, res, next) => {
     const city = req.params.city;
     const manager = new serviceWeatherManager();
     manager.setStrategy(new forecastStrategy());
-    let result = await sendRequest(manager, city);
+    let result = await sendRequest(manager, city ,req);
     return res.status(result.cod).json(result);
   } catch (error) {
     return res.status(error.response.status).json({ msg: error.message });
   }
 };
 
-const sendRequest = async (manager, city) => {
+const sendRequest = async (manager, city ,req) => {
   let result;
   if (city) result = await manager.getWeatherByCity(city);
-  else result = await manager.getWeatherByCoors();
+  else result = await manager.getWeatherByCoors(iputils(req));
   return result;
 };
 

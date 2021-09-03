@@ -6,8 +6,8 @@ function serviceWeatherManager() {
   this.getWeatherByCity = (city) => {
     return this.validateLogicObject.getWeatherByCity(city);
   };
-  this.getWeatherByCoors = (lat, long) => {
-    return this.validateLogicObject.getWeatherByCoors(lat, long);
+  this.getWeatherByCoors = (ip) => {
+    return this.validateLogicObject.getWeatherByCoors(ip);
   };
 }
 

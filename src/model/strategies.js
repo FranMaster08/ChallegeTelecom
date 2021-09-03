@@ -8,8 +8,8 @@ function currentStrategy() {
     const query = `appid=${conf.get("services.weather.api-key")}&q=${city}`;
     return sendRequest(url, query);
   };
-  this.getWeatherByCoors = async () => {
-    const { lat, lon } = await ipservices.getLocation();
+  this.getWeatherByCoors = async (ip) => {
+    const { lat, lon } = await ipservices.getLocation(ip);
     const url = `${conf.get("services.weather.url-current")}`;
     let query = `appid=${conf.get("services.weather.api-key")}&lat=${lat}&lon=${lon}`;
     return sendRequest(url, query);
@@ -21,8 +21,8 @@ function forecastStrategy() {
     const query = `appid=${conf.get("services.weather.api-key")}&q=${city}&cnt=5`;
     return await sendRequest(url, query);
   };
-  this.getWeatherByCoors = async () => {
-    const { lat, lon } = await ipservices.getLocation();
+  this.getWeatherByCoors = async (ip) => {
+    const { lat, lon } = await ipservices.getLocation(ip);
     const url = `${conf.get("services.weather.url-daily")}`;
     let query = `lat=${lat}&lon=${lon}&cnt=5&appid=${conf.get("services.weather.api-key")}`;
     return await sendRequest(url, query);
