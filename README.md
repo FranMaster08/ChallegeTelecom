@@ -31,4 +31,14 @@ ip-api y el estado del tiempo a 5 días ]
 - ip-api.com              [Api geolacion]
 
 
-### Buil with love Francisco Javier Jimenez Cohen
+## Public Api
+ - Url de api publicada : https://challenge-fran.herokuapp.com/
+
+  - ### Ejemplo endpoints:
+```
+        https://challenge-fran.herokuapp.com/v1/location.  
+        https://challenge-fran.herokuapp.com/v1/current
+        https://challenge-fran.herokuapp.com/v1/forecast
+
+```
+### Buil with 💕love Francisco Javier Jimenez Cohen
