@@ -12,6 +12,7 @@ describe("test routes", () => {
         .expect("Content-Type", /json/)
         .end((err, response) => {
           should.not.exist(err);
+          should.not.exist(err);
           response.status.should.be.equal(200);
           done();
         });
@@ -32,6 +33,7 @@ describe("test routes", () => {
         .get("/v1/current")
         .expect("Content-Type", /json/)
         .end((err, response) => {
+          should.not.exist(err);
           response.status.should.be.equal(200);
           done();
         });
@@ -41,6 +43,7 @@ describe("test routes", () => {
         .get("/v1/current/soledad")
         .expect("Content-Type", /json/)
         .end((err, response) => {
+          should.not.exist(err);
           response.status.should.be.equal(200);
           response.body.name.should.be.equal("Soledad");
           done();
@@ -51,6 +54,7 @@ describe("test routes", () => {
         .get("/v1/current/ppppp")
         .expect("Content-Type", /json/)
         .end((err, response) => {
+          should.not.exist(err);
           response.status.should.be.equal(404);
           done();
         });
@@ -62,6 +66,7 @@ describe("test routes", () => {
         .get("/v1/forecast")
         .expect("Content-Type", /json/)
         .end((err, response) => {
+          should.not.exist(err);
           response.status.should.be.equal(200);
           done();
         });
@@ -71,6 +76,7 @@ describe("test routes", () => {
         .get("/v1/forecast/soledad")
         .expect("Content-Type", /json/)
         .end((err, response) => {
+          should.not.exist(err);
           response.status.should.be.equal(200);
           response.body.city.name.should.be.equal("Soledad");
           done();
