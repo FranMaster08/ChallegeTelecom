@@ -7,7 +7,7 @@ const location = async (req, res, next) => {
     const data = await ipservices.getLocation();
     return res.status(200).json( data );
   } catch (error) {
-    throw error;
+    return res.status(error.response.status).json(error.message);
   }
 };
 

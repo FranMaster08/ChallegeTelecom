@@ -1,7 +1,6 @@
 const request = require("supertest");
 var should = require("should");
 const app = require("../src/app");
-
 /*
  * Testing app
  */
