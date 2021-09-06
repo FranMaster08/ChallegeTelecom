@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_ENV=test mocha ",
-    "dev": " export NODE_ENV=dev && node src/index.js ",
-    "dev-window": " set NODE_ENV=%dev && node src/index.js ",
-    "start": "export NODE_ENV=production && node src/index"
+    "test": "mocha ",
+    "dev": "node src/index.js ",
+    "dev-window": "node src/index.js ",
+    "start": "node src/index"
   },
   "repository": {
     "type": "git",
